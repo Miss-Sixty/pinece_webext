@@ -16,10 +16,10 @@
   },
   "dependencies": {
     "element-plus": "^2.9.2",
+    "vue-i18n": "^11.0.1",
     "vue": "^3.5.12"
   },
   "devDependencies": {
-    "@iconify/vue": "^4.3.0",
     "@types/chrome": "^0.0.280",
     "@wxt-dev/module-vue": "^1.0.1",
     "autoprefixer": "^10.4.20",

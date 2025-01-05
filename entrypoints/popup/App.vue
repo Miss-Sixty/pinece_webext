@@ -7,10 +7,14 @@ import startProgress from "./utils/percentage";
 import { recursiveFind } from "./utils/tree";
 import type { BookmarkNode, ResultData, TreeDataNode } from "./types";
 import download from "./utils/download";
+import { useI18n } from "vue-i18n";
+import { Download } from "./components/icons";
+
+const { t } = useI18n({ useScope: "global" });
 
 const bookmarks = ref<TreeDataNode[]>([]); // 书签数据
 const isExporting = ref<boolean>(false);
-const type = ref<"home" | "progress" | "success">("home");
+const type = ref<"home" | "progress" | "success">("success");
 const exportedData = shallowRef<BookmarkNode[]>(); // 存储导出的数据
 
 // 模拟异步操作
@@ -33,20 +37,20 @@ const resultData = computed<ResultData>(() => {
   switch (type.value) {
     case "progress":
       return {
-        title: "Exporting...",
-        description: "Please wait a moment, this may take some time.",
+        title: t("progress.title"),
+        description: t("progress.description"),
         icon: "pinece.svg",
       };
     case "success":
       return {
-        title: "Export Successful!",
-        description: "Click the button to download the json file",
+        title: t("success.title"),
+        description: t("success.description"),
         icon: "pinece.svg",
       };
     default:
       return {
-        title: "Pinece",
-        description: "Export Your Bookmarks to JSON File",
+        title: t("home.title"),
+        description: t("home.description"),
         icon: "pinece.svg",
       };
   }
@@ -62,7 +66,7 @@ const resultData = computed<ResultData>(() => {
       :percentage="progress"
     />
     <Button class="mt-8" v-if="type === 'home'" @click="isExporting = true">
-      Export Bookmarks
+      {{ t("home.exportButton") }}
     </Button>
 
     <Button
@@ -70,8 +74,8 @@ const resultData = computed<ResultData>(() => {
       v-if="type === 'success'"
       @click="download(exportedData)"
     >
-      <Icon icon="solar:download-minimalistic-linear" />
-      Download
+      <Download style="height: 1em; width: 1em" />
+      {{ t("success.downloadButton") }}
     </Button>
   </div>
   <BookmarksTree

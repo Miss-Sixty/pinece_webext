@@ -1,11 +1,14 @@
 <script lang="ts" setup>
-import { Icon } from "@iconify/vue";
 import { getChromeBookmarks } from "../utils/bookmark/chrome";
 import { recursiveChange, transformBookmark } from "../utils/tree";
 import type { ChangedTreeData, TreeDataNode, CheckedInfo } from "../types";
 import Button from "./Button.vue";
 import { ref, shallowRef } from "vue";
 import type { TreeInstance } from "element-plus";
+import { useI18n } from "vue-i18n";
+import { ArrowLeft, Earth, Folder } from "./icons";
+
+const { t } = useI18n();
 
 const emit = defineEmits<{
   "update:isExporting": [value: boolean];
@@ -73,11 +76,12 @@ getBookmarks();
       @click="$emit('update:isExporting', false)"
       class="m-4 w-fit flex items-center hover:bg-gray-100 py-2 pl-3 pr-4 rounded-full cursor-pointer gap-1 transition-colors"
     >
-      <Icon
-        class="size-7"
-        icon="material-symbols-light:arrow-left-alt-rounded"
-      />
-      <h1 class="text-lg">Home | Select Bookmarks</h1>
+      <ArrowLeft style="height: 1.5em; width: 1.5em" />
+      <h1 class="text-lg flex items-center gap-2">
+        <span>{{ t("bookmarks.backButton") }}</span>
+        <span class="text-gray-500">|</span>
+        <span>{{ t("bookmarks.title") }}</span>
+      </h1>
     </div>
     <el-tree
       v-loading="loading"
@@ -90,13 +94,10 @@ getBookmarks();
       @check="handleCheck"
     >
       <template #default="{ node }">
-        <Icon
+        <component
+          :is="node.data.type === 'link' ? Earth : Folder"
           class="text-black flex-shrink-0"
-          :icon="
-            node.data.type === 'link'
-              ? 'solar:earth-linear'
-              : 'solar:folder-2-linear'
-          "
+          style="height: 1em; width: 1em"
         />
         <span :title="node.label" class="ml-0.5 text-black truncate">
           {{ node.label }}
@@ -109,7 +110,7 @@ getBookmarks();
         @click="handleExportBookmarks"
         :disabled="!checkedBookmarks.length"
       >
-        Continue
+        {{ t("bookmarks.continueButton") }}
       </Button>
     </div>
   </div>

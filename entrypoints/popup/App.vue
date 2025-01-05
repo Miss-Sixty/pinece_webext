@@ -14,7 +14,7 @@ const { t } = useI18n({ useScope: "global" });
 
 const bookmarks = ref<TreeDataNode[]>([]); // 书签数据
 const isExporting = ref<boolean>(false);
-const type = ref<"home" | "progress" | "success">("success");
+const type = ref<"home" | "progress" | "success">("home");
 const exportedData = shallowRef<BookmarkNode[]>(); // 存储导出的数据
 
 // 模拟异步操作

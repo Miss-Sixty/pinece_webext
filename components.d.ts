@@ -8,8 +8,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     ElProgress: typeof import('element-plus/es')['ElProgress']
-    ElSkeleton: typeof import('element-plus/es')['ElSkeleton']
-    ElSkeletonItem: typeof import('element-plus/es')['ElSkeletonItem']
     ElTree: typeof import('element-plus/es')['ElTree']
   }
   export interface ComponentCustomProperties {

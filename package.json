@@ -1,6 +1,6 @@
 {
   "name": "pinece-webext",
-  "description": "manifest.json description",
+  "description": "Pinece Webext is an open-source Chrome extension that lets you export browser bookmarks in JSON format and download them locally.",
   "private": true,
   "version": "1.0.0",
   "type": "module",

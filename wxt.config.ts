@@ -11,11 +11,7 @@ export default defineConfig({
   manifest: {
     permissions: [
       "bookmarks",
-      "*://*.icon.horse/*"
     ],
-    host_permissions: [
-      "*://*.icon.horse/*"
-    ]
   },
   vite: () => ({
     plugins: [

@@ -1,7 +1,10 @@
-# WXT + Vue 3
+# Pinece Webext
 
-This template should help get you started developing with Vue 3 in WXT.
+## Introduction
 
-## Recommended IDE Setup
+Pinece Webext is an open-source Chrome extension that allows you to export your browser bookmarks in JSON format and download them locally.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -11,11 +11,9 @@ export default defineConfig({
   manifest: {
     permissions: [
       "bookmarks",
-      "*://*.clearbit.com/*",
       "*://*.icon.horse/*"
     ],
     host_permissions: [
-      "*://*.clearbit.com/*",
       "*://*.icon.horse/*"
     ]
   },

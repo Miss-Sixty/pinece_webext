@@ -43,8 +43,8 @@ importers:
         specifier: ^0.9.0
         version: 0.9.0(rollup@4.34.6)
       unplugin-vue-components:
-        specifier: ^0.28.0
-        version: 0.28.0(@babel/parser@7.26.8)(rollup@4.34.6)(vue@3.5.13(typescript@5.7.2))
+        specifier: ^28.0.0
+        version: 28.0.0(@babel/parser@7.26.8)(rollup@4.34.6)(vue@3.5.13(typescript@5.7.2))
       vue-tsc:
         specifier: ^2.1.10
         version: 2.2.0(typescript@5.7.2)
@@ -2458,8 +2458,8 @@ packages:
     resolution: {integrity: sha512-xzxU+Ri16EtHsow5uJCYLOx6vbKKNC3ts1+EyqKdmPjBA6iRCpyrc7bv7o0RhGSbNc7viquepO2GgIvSL5K8TA==}
     engines: {node: '>=18.12.0'}
 
-  unplugin-vue-components@0.28.0:
-    resolution: {integrity: sha512-jiTGtJ3JsRFBjgvyilfrX7yUoGKScFgbdNw+6p6kEXU+Spf/rhxzgvdfuMcvhCcLmflB/dY3pGQshYBVGOUx7Q==}
+  unplugin-vue-components@28.0.0:
+    resolution: {integrity: sha512-vYe0wSyqTVhyNFIad1iiGyQGhG++tDOMgohqenMDOAooMJP9vvzCdXTqCVx20A0rCQXFNjgoRbSeDAioLPH36Q==}
     engines: {node: '>=14'}
     peerDependencies:
       '@babel/parser': ^7.15.8
@@ -5063,7 +5063,7 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  unplugin-vue-components@0.28.0(@babel/parser@7.26.8)(rollup@4.34.6)(vue@3.5.13(typescript@5.7.2)):
+  unplugin-vue-components@28.0.0(@babel/parser@7.26.8)(rollup@4.34.6)(vue@3.5.13(typescript@5.7.2)):
     dependencies:
       '@antfu/utils': 0.7.10
       '@rollup/pluginutils': 5.1.4(rollup@4.34.6)
@@ -5073,7 +5073,7 @@ snapshots:
       local-pkg: 0.5.1
       magic-string: 0.30.17
       minimatch: 9.0.5
-      mlly: 1.7.3
+      mlly: 1.7.4
       unplugin: 2.1.2
       vue: 3.5.13(typescript@5.7.2)
     optionalDependencies:

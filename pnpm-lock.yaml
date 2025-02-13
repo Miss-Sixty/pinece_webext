@@ -41,7 +41,7 @@ importers:
         version: 0.19.0(@vueuse/core@9.13.0(vue@3.5.13(typescript@5.7.2)))(rollup@4.34.6)
       unplugin-element-plus:
         specifier: ^0.9.0
-        version: 0.9.0(rollup@4.34.6)
+        version: 0.9.1
       unplugin-vue-components:
         specifier: ^0.28.0
         version: 0.28.0(@babel/parser@7.26.8)(rollup@4.34.6)(vue@3.5.13(typescript@5.7.2))
@@ -2454,8 +2454,12 @@ packages:
       '@vueuse/core':
         optional: true
 
-  unplugin-element-plus@0.9.0:
-    resolution: {integrity: sha512-xzxU+Ri16EtHsow5uJCYLOx6vbKKNC3ts1+EyqKdmPjBA6iRCpyrc7bv7o0RhGSbNc7viquepO2GgIvSL5K8TA==}
+  unplugin-element-plus@0.9.1:
+    resolution: {integrity: sha512-TtQ7bj82gM1Hw5A+LmG/oFrvYb6L0BqhxVUl7djMiicvk7LjdUiP70QhTKaBY/tiFR9NJCIPYSmw4naCuhK7Hg==}
+    engines: {node: '>=18.12.0'}
+
+  unplugin-utils@0.2.4:
+    resolution: {integrity: sha512-8U/MtpkPkkk3Atewj1+RcKIjb5WBimZ/WSLhhR3w6SsIj8XJuKTacSP8g+2JhfSGw0Cb125Y+2zA/IzJZDVbhA==}
     engines: {node: '>=18.12.0'}
 
   unplugin-vue-components@0.28.0:
@@ -2481,6 +2485,10 @@ packages:
 
   unplugin@2.1.2:
     resolution: {integrity: sha512-Q3LU0e4zxKfRko1wMV2HmP8lB9KWislY7hxXpxd+lGx0PRInE4vhMBVEZwpdVYHvtqzhSrzuIfErsob6bQfCzw==}
+    engines: {node: '>=18.12.0'}
+
+  unplugin@2.2.0:
+    resolution: {integrity: sha512-m1ekpSwuOT5hxkJeZGRxO7gXbXT3gF26NjQ7GdVHoLoF8/nopLcd/QfPigpCy7i51oFHiRJg/CyHhj4vs2+KGw==}
     engines: {node: '>=18.12.0'}
 
   untildify@4.0.0:
@@ -5054,14 +5062,17 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  unplugin-element-plus@0.9.0(rollup@4.34.6):
+  unplugin-element-plus@0.9.1:
     dependencies:
-      '@rollup/pluginutils': 5.1.4(rollup@4.34.6)
       es-module-lexer: 1.6.0
       magic-string: 0.30.17
-      unplugin: 2.1.2
-    transitivePeerDependencies:
-      - rollup
+      unplugin: 2.2.0
+      unplugin-utils: 0.2.4
+
+  unplugin-utils@0.2.4:
+    dependencies:
+      pathe: 2.0.3
+      picomatch: 4.0.2
 
   unplugin-vue-components@0.28.0(@babel/parser@7.26.8)(rollup@4.34.6)(vue@3.5.13(typescript@5.7.2)):
     dependencies:
@@ -5093,6 +5104,11 @@ snapshots:
       webpack-virtual-modules: 0.6.2
 
   unplugin@2.1.2:
+    dependencies:
+      acorn: 8.14.0
+      webpack-virtual-modules: 0.6.2
+
+  unplugin@2.2.0:
     dependencies:
       acorn: 8.14.0
       webpack-virtual-modules: 0.6.2
